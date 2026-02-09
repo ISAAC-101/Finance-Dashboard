@@ -1,4 +1,5 @@
 import { StatCard } from "../components/StatCard";
+import { PieChart } from "../components/PieChart";
 import { Layout } from "../components/Layout";
 
 export function Dashboard() {
@@ -22,6 +23,9 @@ export function Dashboard() {
                         amount={"$7330"}
                         icon={<ion-icon name="bag-add-outline"></ion-icon>}
                         bgColor="bg-blue-500 hover:bg-blue-600" />
+                </section>
+                <section>
+                    <PieChart/>
                 </section>
             </div>
         </Layout>

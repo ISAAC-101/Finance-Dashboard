@@ -11,7 +11,7 @@ export function Layout({ children }) {
 
                 <Navbar />
 
-                <div className="p-5 bg-slate-50 flex-1 overflow-auto">
+                <div className="p-5 bg-slate-200 flex-1 overflow-auto">
                     {children}
                 </div>
             </div>
