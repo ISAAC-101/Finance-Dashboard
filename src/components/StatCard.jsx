@@ -1,6 +1,6 @@
 export function StatCard({ title, amount, bgColor, icon }) {
     return (
-        <div className={`relative overflow-hidden p-5 rounded-xl text-white ${bgColor} shadow-md mb-8`}>
+        <div className={`relative overflow-hidden p-5 rounded-xl text-white ${bgColor} shadow-md mb-8 transition duration-200 `}>
 
 
             {/* Stepped growth line – bottom right */}

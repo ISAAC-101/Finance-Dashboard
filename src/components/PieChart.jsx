@@ -10,7 +10,7 @@ export function PieChart() {
         datasets: [
             {
                 label: "Expenses",
-                data: [500, 300, 100, 150], 
+                data: [500, 300, 100, 150],
                 backgroundColor: [
                     "rgba(75, 192, 192, 0.7)",   // Rent
                     "rgba(255, 99, 132, 0.7)",   // Food
@@ -28,13 +28,15 @@ export function PieChart() {
         ],
     };
     const options = {
-        cutout: "50%", 
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: "65%",
         plugins: {
             legend: {
-                position: "right", // <- move legend to the right
+                position: "bottom",
                 labels: {
                     font: {
-                        size: 13,
+                        size: 0,
                     },
                 },
             },
@@ -52,9 +54,15 @@ export function PieChart() {
 
 
     return (
-        <div className="w-full max-w-md mx-auto p-7 bg-white rounded-xl shadow-md pb-0">
-            <h2 className="text-xl font-bold mb-4 text-gray-700 border-b-4 border-gray-300 pb-5">Expense Breakdown</h2>
-            <Pie data={pieData} options={options} />
+
+        <div className="w-full h-100  p-4 bg-white rounded-xl shadow-md ">
+            <h2 className="text-lg font-semibold mb-2">Expense Breakdown</h2>
+            <div className="flex items-center justify-center h-[300px]">
+                <div className="w-[280px]  h-[280px]">
+                    <Pie data={pieData} options={options} />
+                </div>
+            </div>
         </div>
+
     );
 }

@@ -1,8 +1,10 @@
 import { StatCard } from "../components/StatCard";
 import { PieChart } from "../components/PieChart";
+import { LineChart } from "../components/LineChart";
 import { Layout } from "../components/Layout";
+import { TransactionsTable } from "../components/TransactionsTable";
 
-export function Dashboard() {
+export function Dashboard({ transactions }) {
     return (
         <Layout>
             <div>
@@ -23,9 +25,16 @@ export function Dashboard() {
                         amount={"$7330"}
                         icon={<ion-icon name="bag-add-outline"></ion-icon>}
                         bgColor="bg-blue-500 hover:bg-blue-600" />
+
                 </section>
-                <section>
-                    <PieChart/>
+                <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <PieChart />
+                    <LineChart />
+                </section>
+                <section className="mt-15 ">
+                    <h1 className="text-lg font-semibold mb-2 flex justify-between items-center mb-6">Recent Transactions</h1>
+                    <TransactionsTable transactions={transactions} />
+
                 </section>
             </div>
         </Layout>
