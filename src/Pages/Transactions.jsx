@@ -3,7 +3,7 @@ import { Layout } from "../components/Layout";
 import { useState } from "react";
 
 
-export function Transactions({ transactions, setTransactions }) {
+export function Transactions({ transactions, setTransactions , currency}) {
 
 
 
@@ -135,7 +135,7 @@ export function Transactions({ transactions, setTransactions }) {
                 )}
 
                 {/* TRANSACTIONS TABLE */}
-                <TransactionsTable transactions={transactions} setTransactions={setTransactions} showDelete={true}/>
+                <TransactionsTable transactions={transactions} setTransactions={setTransactions} showDelete={true} currency={currency}/>
             </div>
         </Layout>
     );

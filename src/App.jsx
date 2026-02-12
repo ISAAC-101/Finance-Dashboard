@@ -34,10 +34,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard transactions={transactions} />} />
+        <Route path="/" element={<Dashboard transactions={transactions} currency={currency} />} />
         <Route path="/report" element={<Report />} />
         <Route path="/settings" element={<Settings darkMode={darkMode} setDarkMode={setDarkMode} currency={currency} setCurrency={setCurrency} />}  />
-        <Route path="/transactions" element={<Transactions transactions={transactions} setTransactions={setTransactions} />} />
+        <Route path="/transactions" element={<Transactions transactions={transactions} setTransactions={setTransactions} currency={currency}/>} />
       </Routes>
     </Router>
   );
