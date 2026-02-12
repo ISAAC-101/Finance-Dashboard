@@ -135,7 +135,7 @@ export function Transactions({ transactions, setTransactions }) {
                 )}
 
                 {/* TRANSACTIONS TABLE */}
-                <TransactionsTable transactions={transactions} setTransactions={setTransactions} />
+                <TransactionsTable transactions={transactions} setTransactions={setTransactions} showDelete={true}/>
             </div>
         </Layout>
     );

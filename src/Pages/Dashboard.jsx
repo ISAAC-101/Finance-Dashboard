@@ -4,7 +4,7 @@ import { LineChart } from "../components/LineChart";
 import { Layout } from "../components/Layout";
 import { TransactionsTable } from "../components/TransactionsTable";
 
-export function Dashboard({ transactions }) {
+export function Dashboard({ transactions,setTransactions }) {
     return (
         <Layout>
             <div>
@@ -33,7 +33,7 @@ export function Dashboard({ transactions }) {
                 </section>
                 <section className="mt-15 ">
                     <h1 className="text-lg font-semibold mb-2 flex justify-between items-center mb-6">Recent Transactions</h1>
-                    <TransactionsTable transactions={transactions} />
+                    <TransactionsTable transactions={transactions} setTransactions={setTransactions}/>
 
                 </section>
             </div>

@@ -1,4 +1,15 @@
-export function TransactionsTable({ transactions }) {
+export function TransactionsTable({ transactions, setTransactions, showDelete, currency }) {
+
+    const handleDelete = (id) => {
+        const confirmed = window.confirm(
+            "Are you sure you want to delete this transaction?"
+        );
+        if (confirmed) {
+            const updatedTransactions = transactions.filter((tx) => tx.id !== id);
+            setTransactions(updatedTransactions);
+        }
+    };
+
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <table className="w-full">
@@ -9,6 +20,8 @@ export function TransactionsTable({ transactions }) {
                         <th className="p-4 text-left">Type</th>
                         <th className="p-4 text-left">Amount</th>
                         <th className="p-4 text-left">Date</th>
+                        {showDelete && (
+                            <th className="p-4 text-left">Actions</th>)}
                     </tr>
                 </thead>
 
@@ -33,9 +46,22 @@ export function TransactionsTable({ transactions }) {
                                     : "text-red-600"
                                     }`}
                             >
-                                ${tx.amount}
+                                {currency === "GHS" && "₵"}
+                                {currency === "USD" && "$"}
+                                {currency === "EUR" && "€"}
+                                {tx.amount}
                             </td>
                             <td className="p-4 text-gray-500">{tx.date}</td>
+                            {showDelete && (
+                                <td key={tx.id}>
+                                    <button
+                                        onClick={() => handleDelete(tx.id)}
+                                        className="bg-red-500 text-white px-2 py-1 rounded"
+                                    >
+                                        Delete
+                                    </button>
+                                </td>)
+                            }
                         </tr>
                     ))}
                 </tbody>

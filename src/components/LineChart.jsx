@@ -11,10 +11,9 @@ export function LineChart() {
         datasets: [
             {
                 label: "Income",
-                data: [1200, 1500, 1400, 18000, 1700, 2000],
+                data: [1200, 1500, 1400, 1800, 1700, 2000],
                 borderColor: "#22c55e", // green
                 backgroundColor: "rgba(34, 197, 94, 0.2)",
-                tension: 0.4,
                 pointRadius: 4,
             },
             {
@@ -22,7 +21,6 @@ export function LineChart() {
                 data: [800, 900, 950, 1100, 1050, 1300],
                 borderColor: "#ef4444", // red
                 backgroundColor: "rgba(239, 68, 68, 0.2)",
-                tension: 0.4,
                 pointRadius: 4,
             },
         ]

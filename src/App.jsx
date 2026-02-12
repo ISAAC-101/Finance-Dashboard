@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Dashboard } from './Pages/Dashboard';
 import { Report } from './Pages/Report';
@@ -12,12 +12,31 @@ function App() {
     { id: 2, title: "Rent", category: "Housing", amount: 800, type: "expense", date: "2025-02-03" },
   ]);
 
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true" ? true : false;
+});
+
+  const [currency, setCurrency] = useState(
+    localStorage.getItem("currency") || "GHS"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+    localStorage.setItem("currency", currency);
+
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode, currency]);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Dashboard transactions={transactions} />} />
         <Route path="/report" element={<Report />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings" element={<Settings darkMode={darkMode} setDarkMode={setDarkMode} currency={currency} setCurrency={setCurrency} />}  />
         <Route path="/transactions" element={<Transactions transactions={transactions} setTransactions={setTransactions} />} />
       </Routes>
     </Router>
