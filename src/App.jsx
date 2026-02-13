@@ -36,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard transactions={transactions} currency={currency} />} />
         <Route path="/report" element={<Report transactions={transactions} currency={currency}/>} />
-        <Route path="/settings" element={<Settings darkMode={darkMode} setDarkMode={setDarkMode} currency={currency} setCurrency={setCurrency} />}  />
+        <Route path="/settings" element={<Settings darkMode={darkMode} setDarkMode={setDarkMode} currency={currency} setCurrency={setCurrency} setTransactions={setTransactions} />}  />
         <Route path="/transactions" element={<Transactions transactions={transactions} setTransactions={setTransactions} currency={currency}/>} />
       </Routes>
     </Router>
