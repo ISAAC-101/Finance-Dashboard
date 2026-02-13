@@ -12,60 +12,109 @@ export function TransactionsTable({ transactions, setTransactions, showDelete, c
 
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-            <table className="w-full">
-                <thead className="bg-gray-100 text-sm">
-                    <tr>
-                        <th className="p-4 text-left">Title</th>
-                        <th className="p-4 text-left">Category</th>
-                        <th className="p-4 text-left">Type</th>
-                        <th className="p-4 text-left">Amount</th>
-                        <th className="p-4 text-left">Date</th>
-                        {showDelete && (
-                            <th className="p-4 text-left">Actions</th>)}
-                    </tr>
-                </thead>
+            <div className="hidden md:block overflow-x-auto">
+                <table className="w-full">
+                    <thead className="bg-gray-100 text-sm">
+                        <tr>
+                            <th className="p-4 text-left">Title</th>
+                            <th className="p-4 text-left">Category</th>
+                            <th className="p-4 text-left">Type</th>
+                            <th className="p-4 text-left">Amount</th>
+                            <th className="p-4 text-left">Date</th>
+                            {showDelete && (
+                                <th className="p-4 text-left">Actions</th>)}
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    {transactions.map((tx) => (
-                        <tr key={tx.id} className="border-t">
-                            <td className="p-4">{tx.title}</td>
-                            <td className="p-4">{tx.category}</td>
-                            <td className="p-4">
-                                <span
-                                    className={`px-2 py-1 rounded text-xs font-semibold ${tx.type === "income"
-                                        ? "bg-green-100 text-green-700"
-                                        : "bg-red-100 text-red-700"
+                    <tbody>
+                        {transactions.map((tx) => (
+                            <tr key={tx.id} className="border-t">
+                                <td className="p-4">{tx.title}</td>
+                                <td className="p-4">{tx.category}</td>
+                                <td className="p-4">
+                                    <span
+                                        className={`px-2 py-1 rounded text-xs font-semibold ${tx.type === "income"
+                                            ? "bg-green-100 text-green-700"
+                                            : "bg-red-100 text-red-700"
+                                            }`}
+                                    >
+                                        {tx.type}
+                                    </span>
+                                </td>
+                                <td
+                                    className={`p-4 font-semibold ${tx.type === "income"
+                                        ? "text-green-600"
+                                        : "text-red-600"
                                         }`}
                                 >
-                                    {tx.type}
-                                </span>
-                            </td>
-                            <td
-                                className={`p-4 font-semibold ${tx.type === "income"
-                                    ? "text-green-600"
-                                    : "text-red-600"
+                                    {currency === "GHS" && "₵"}
+                                    {currency === "USD" && "$"}
+                                    {currency === "EUR" && "€"}
+                                    {tx.amount}
+                                </td>
+                                <td className="p-4 text-gray-500">{tx.date}</td>
+                                {showDelete && (
+                                    <td key={tx.id}>
+                                        <button
+                                            onClick={() => handleDelete(tx.id)}
+                                            className="bg-red-500 text-white px-2 py-1 rounded"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>)
+                                }
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            {/* Mobile Card View */}
+            <div className="md:hidden">
+                {transactions.map((tx) => (
+                    <div key={tx.id} className="border-b p-4 last:border-b-0">
+                        <div className="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 className="font-semibold text-lg">{tx.title}</h3>
+                                <p className="text-sm text-gray-500">{tx.category}</p>
+                            </div>
+                            <span
+                                className={`px-2 py-1 rounded text-xs font-semibold ${tx.type === "income"
+                                        ? "bg-green-100 text-green-700"
+                                        : "bg-red-100 text-red-700"
                                     }`}
                             >
-                                {currency === "GHS" && "₵"}
-                                {currency === "USD" && "$"}
-                                {currency === "EUR" && "€"}
-                                {tx.amount}
-                            </td>
-                            <td className="p-4 text-gray-500">{tx.date}</td>
+                                {tx.type}
+                            </span>
+                        </div>
+
+                        <div className="flex justify-between items-center mt-3">
+                            <div>
+                                <p
+                                    className={`text-xl font-bold ${tx.type === "income"
+                                            ? "text-green-600"
+                                            : "text-red-600"
+                                        }`}
+                                >
+                                    {currency === "GHS" && "₵"}
+                                    {currency === "USD" && "$"}
+                                    {currency === "EUR" && "€"}
+                                    {tx.amount}
+                                </p>
+                                <p className="text-sm text-gray-500">{tx.date}</p>
+                            </div>
+
                             {showDelete && (
-                                <td key={tx.id}>
-                                    <button
-                                        onClick={() => handleDelete(tx.id)}
-                                        className="bg-red-500 text-white px-2 py-1 rounded"
-                                    >
-                                        Delete
-                                    </button>
-                                </td>)
-                            }
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+                                <button
+                                    onClick={() => handleDelete(tx.id)}
+                                    className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600"
+                                >
+                                    Delete
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
