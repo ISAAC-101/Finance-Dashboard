@@ -11,25 +11,28 @@ export function Dashboard({ transactions,setTransactions , currency }) {
                 <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <StatCard
                         title={"Total Income"}
-                        amount={"$4200"}
+                        amount={"4200"}
+                        currency={currency}
                         icon={<ion-icon name="add-circle-outline"></ion-icon>}
                         bgColor="bg-green-500 hover:bg-green-600"
                     />
                     <StatCard
                         title={"Total Expenses"}
-                        amount={"$3000"}
+                        amount={"3000"}
+                        currency={currency}
                         icon={<ion-icon name="remove-circle-outline"></ion-icon>}
                         bgColor="bg-red-500 hover:bg-red-600" />
                     <StatCard
                         title={"Savings"}
-                        amount={"$7330"}
+                        amount={"7330"}
+                        currency={currency}
                         icon={<ion-icon name="bag-add-outline"></ion-icon>}
                         bgColor="bg-blue-500 hover:bg-blue-600" />
 
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <PieChart />
-                    <LineChart />
+                    <PieChart currency={currency}/>
+                    <LineChart currency={currency}/>
                 </section>
                 <section className="mt-15 ">
                     <h1 className="text-lg font-semibold mb-2 flex justify-between items-center mb-6">Recent Transactions</h1>

@@ -1,10 +1,19 @@
 import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
-export function PieChart() {
+export function PieChart({ currency }) {
+
+    const symbols = {
+        GHS: "₵",
+        USD: "$",
+        EUR: "€",
+    };
+
+    const symbol = symbols[currency] || "";
+
     const pieData = {
         labels: ["Rent", "Food", "Transport", "Entertainment"],
         datasets: [
@@ -43,7 +52,7 @@ export function PieChart() {
             tooltip: {
                 callbacks: {
                     label: function (tooltipItem) {
-                        return `$${tooltipItem.raw}`;
+                        return `${symbol}${tooltipItem.raw}`;
                     },
                 },
             },

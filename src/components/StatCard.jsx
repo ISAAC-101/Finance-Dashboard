@@ -1,9 +1,7 @@
-export function StatCard({ title, amount, bgColor, icon }) {
+export function StatCard({ title, amount, bgColor, icon, currency }) {
     return (
         <div className={`relative overflow-hidden p-5 rounded-xl text-white ${bgColor} shadow-md mb-8 transition duration-200 `}>
 
-
-            {/* Stepped growth line – bottom right */}
             <div className="absolute bottom-4 right-4 flex items-end gap-3 opacity-70">
                 <div className="w-6 h-4 border-t-2 border-r-2 border-white"></div>
                 <div className="w-6 h-7 border-t-2 border-r-2 border-white"></div>
@@ -20,7 +18,10 @@ export function StatCard({ title, amount, bgColor, icon }) {
             </div>
 
             <div>
-                <h2 className="text-2xl font-bold mt-1">{amount}</h2>
+                <h2 className="text-2xl font-bold mt-1"> {currency === "GHS" && "₵"}
+                    {currency === "USD" && "$"}
+                    {currency === "EUR" && "€"}
+                    {amount}</h2>
             </div>
 
         </div>

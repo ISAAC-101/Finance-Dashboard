@@ -4,7 +4,18 @@ import { Line } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 
-export function LineChart() {
+export function LineChart({ currency }) {
+
+
+    const symbols = {
+        GHS: "₵",
+        USD: "$",
+        EUR: "€",
+    };
+
+    const symbol = symbols[currency] || "";
+
+
     const data = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
 
@@ -34,14 +45,14 @@ export function LineChart() {
             },
             tooltip: {
                 callbacks: {
-                    label: (context) => `$${context.raw}`,
+                    label: (context) => ` ${symbol}${context.raw}`,
                 },
             },
         },
         scales: {
             y: {
                 ticks: {
-                    callback: (value) => `$${value}`,
+                    callback: (value) => ` ${symbol}${value}`,
                 },
             },
         },
