@@ -13,22 +13,22 @@ export function Sidebar({ isOpen, setIsOpen }) {
 
             {/* Sidebar */}
             <div className={`
-                fixed md:static
+                fixed lg:static
                 inset-y-0 left-0
-                w-64 md:w-48
+                w-64 lg:w-48
                 bg-gray-800 text-gray-300
                 transform transition-transform duration-300 ease-in-out
                 z-50
-                ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+                ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             `}>
-                <div className="text-xl font-bold mb-5 px-8 pt-4 flex items-center justify-between md:justify-evenly">
+                <div className="text-xl font-bold mb-5 px-8 pt-4 flex items-center justify-between lg:justify-evenly">
                     <div className="flex items-center gap-2">
-                        <img src={wallet} alt="" className="w-8 md:w-10" />
+                        <img src={wallet} alt="" className="w-8 lg:w-10" />
                         <h2>Menu</h2>
                     </div>
                     {/* Close button for mobile */}
                     <button
-                        className="md:hidden text-2xl"
+                        className="lg:hidden text-2xl"
                         onClick={() => setIsOpen(false)}
                     >
                         <ion-icon name="close-outline"></ion-icon>

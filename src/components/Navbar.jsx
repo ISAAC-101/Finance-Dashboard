@@ -6,7 +6,7 @@ export function Navbar({toggleSidebar}) {
             <div className="flex items-center  gap-3">
                 {/* Hamburger menu button */}
                 <button 
-                    className="md:hidden text-2xl text-gray-700"
+                    className="lg:hidden text-2xl text-gray-700"
                     onClick={toggleSidebar}
                 >
                     <ion-icon name="menu-outline"></ion-icon>
