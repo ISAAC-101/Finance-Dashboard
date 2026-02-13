@@ -19,6 +19,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                 bg-gray-800 text-gray-300
                 transform transition-transform duration-300 ease-in-out
                 z-50
+                    flex flex-col
                 ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             `}>
                 <div className="text-xl font-bold mb-5 px-8 pt-4 flex items-center justify-between lg:justify-evenly">
@@ -76,6 +77,9 @@ export function Sidebar({ isOpen, setIsOpen }) {
                         </Link>
                     </li>
                 </ul>
+                <div className="mt-auto px-8 py-4 text-s text-gray-500 border-t border-gray-700">
+                    Created by ISAAC-101
+                </div>
             </div>
         </>
     );
