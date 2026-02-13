@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout";
 
-export function Settings({ darkMode, setDarkMode, currency, setCurrency,setTransactions }) {
+export function Settings({ darkMode, setDarkMode, currency, setCurrency}) {
     return (
         <Layout>
             <div className="p-6 space-y-6">
@@ -33,7 +33,6 @@ export function Settings({ darkMode, setDarkMode, currency, setCurrency,setTrans
                     <button
                         onClick={() => {
                             localStorage.removeItem("transactions");
-                            setTransactions([]);
                             window.location.reload();
                         }}
                         className="bg-red-500 text-white px-4 py-2 rounded-md"
