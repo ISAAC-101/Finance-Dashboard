@@ -34,6 +34,7 @@ export function Settings({ darkMode, setDarkMode, currency, setCurrency,setTrans
                         onClick={() => {
                             localStorage.removeItem("transactions");
                             setTransactions([]);
+                            window.location.reload();
                         }}
                         className="bg-red-500 text-white px-4 py-2 rounded-md"
                     >
