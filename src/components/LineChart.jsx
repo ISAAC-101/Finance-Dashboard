@@ -60,7 +60,7 @@ export function LineChart({ currency }) {
 
 
     return (
-        <div className="bg-white rounded-xl shadow-md p-4 h-100">
+        <div className="bg-white rounded-xl shadow-md p-4 h-100 dark:bg-gray-900 dark:text-white">
             <h2 className="text-lg font-semibold mb-2">
                 Income vs Expenses
             </h2>

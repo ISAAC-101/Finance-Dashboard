@@ -4,7 +4,7 @@ export function Settings({ darkMode, setDarkMode, currency, setCurrency}) {
     return (
         <Layout>
             <div className="p-6 space-y-6">
-                <h1 className="text-2xl font-bold">Settings</h1>
+                <h1 className="text-2xl font-bold dark:text-white">Settings</h1>
 
                 {/* Dark Mode */}
                 <div className="flex justify-between items-center bg-gray-100 dark:bg-gray-900 dark:text-white p-4 rounded-lg">
@@ -17,7 +17,7 @@ export function Settings({ darkMode, setDarkMode, currency, setCurrency}) {
                 </div>
 
                 {/* Currency */}
-                <div className="flex justify-between items-center bg-gray-100  p-4 rounded-lg">
+                <div className="flex justify-between items-center bg-gray-100  p-4 rounded-lg dark:bg-gray-900 dark:text-white ">
                     <span>Currency</span>
                     <select
                         value={currency}

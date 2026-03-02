@@ -16,7 +16,8 @@ export function Sidebar({ isOpen, setIsOpen }) {
                 fixed lg:static
                 inset-y-0 left-0
                 w-64 lg:w-48
-                bg-gray-800 text-gray-300
+                bg-gray-800 dark:bg-gray-900
+                text-gray-300 dark:bg-gray-200
                 transform transition-transform duration-300 ease-in-out
                 z-50
                     flex flex-col
@@ -39,7 +40,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                     <li>
                         <Link
                             to="/"
-                            className="py-4 hover:bg-sky-700 cursor-pointer flex items-center px-8 gap-2"
+                            className="py-4 hover:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer flex items-center px-8 gap-2"
                             onClick={() => setIsOpen(false)}
                         >
                             <ion-icon name="grid-outline"></ion-icon>
@@ -49,7 +50,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                     <li>
                         <Link
                             to="/transactions"
-                            className="py-4 hover:bg-sky-700 cursor-pointer flex items-center px-8 gap-2"
+                            className="py-4 hover:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer flex items-center px-8 gap-2"
                             onClick={() => setIsOpen(false)}
                         >
                             <ion-icon name="file-tray-stacked-outline"></ion-icon>
@@ -59,7 +60,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                     <li>
                         <Link
                             to="/report"
-                            className="py-4 hover:bg-sky-700 cursor-pointer flex items-center px-8 gap-2"
+                            className="py-4 hover:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer flex items-center px-8 gap-2"
                             onClick={() => setIsOpen(false)}
                         >
                             <ion-icon name="document-outline"></ion-icon>
@@ -69,7 +70,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                     <li>
                         <Link
                             to="/settings"
-                            className="py-4 hover:bg-sky-700 cursor-pointer flex items-center px-8 gap-2"
+                            className="py-4 hover:bg-sky-700 dark:hover:bg-sky-600  cursor-pointer flex items-center px-8 gap-2"
                             onClick={() => setIsOpen(false)}
                         >
                             <ion-icon name="settings-outline"></ion-icon>
@@ -77,7 +78,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                         </Link>
                     </li>
                 </ul>
-                <div className="mt-auto px-8 py-4 text-s text-gray-500 border-t border-gray-700">
+                <div className="mt-auto px-8 py-4 text-s text-gray-500 dark:text-gray-400 border-t border-gray-700 dark:border-gray-600">
                     Created by ISAAC-101
                 </div>
             </div>

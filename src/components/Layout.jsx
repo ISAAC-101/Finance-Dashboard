@@ -13,7 +13,7 @@ export function Layout({ children }) {
             <div className="flex-1 flex flex-col min-w-0">
                 <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
-                <div className="p-3 md:p-5 bg-slate-200 flex-1 overflow-auto">
+                <div className="p-3 md:p-5 bg-slate-200 dark:bg-gray-800 flex-1 overflow-auto">
                     {children}
                 </div>
             </div>

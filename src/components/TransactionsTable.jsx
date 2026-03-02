@@ -11,13 +11,13 @@ export function TransactionsTable({ transactions, setTransactions, showDelete, c
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+        <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden">
             <div className="hidden md:block overflow-x-auto">
                 <table className="w-full">
-                    <thead className="bg-gray-100 text-sm">
+                    <thead className="bg-gray-100 text-sm dark:bg-gray-900 dark:text-white">
                         <tr>
-                            <th className="p-4 text-left">Title</th>
-                            <th className="p-4 text-left">Category</th>
+                            <th className="p-4 text-left ">Title</th>
+                            <th className="p-4 text-left ">Category</th>
                             <th className="p-4 text-left">Type</th>
                             <th className="p-4 text-left">Amount</th>
                             <th className="p-4 text-left">Date</th>
@@ -29,8 +29,8 @@ export function TransactionsTable({ transactions, setTransactions, showDelete, c
                     <tbody>
                         {transactions.map((tx) => (
                             <tr key={tx.id} className="border-t">
-                                <td className="p-4">{tx.title}</td>
-                                <td className="p-4">{tx.category}</td>
+                                <td className="p-4 dark:text-white">{tx.title}</td>
+                                <td className="p-4 dark:text-white">{tx.category}</td>
                                 <td className="p-4">
                                     <span
                                         className={`px-2 py-1 rounded text-xs font-semibold ${tx.type === "income"
@@ -74,7 +74,7 @@ export function TransactionsTable({ transactions, setTransactions, showDelete, c
                     <div key={tx.id} className="border-b p-4 last:border-b-0">
                         <div className="flex justify-between items-start mb-2">
                             <div>
-                                <h3 className="font-semibold text-lg">{tx.title}</h3>
+                                <h3 className="font-semibold text-lg dark:text-white">{tx.title}</h3>
                                 <p className="text-sm text-gray-500">{tx.category}</p>
                             </div>
                             <span

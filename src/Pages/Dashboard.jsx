@@ -35,7 +35,7 @@ export function Dashboard({ transactions,setTransactions , currency }) {
                     <LineChart currency={currency}/>
                 </section>
                 <section className="mt-15 ">
-                    <h1 className="text-lg font-semibold mb-2 flex justify-between items-center mb-6">Recent Transactions</h1>
+                    <h1 className="text-lg font-semibold mb-2 flex justify-between items-center mb-6 dark:text-white">Recent Transactions</h1>
                     <TransactionsTable transactions={transactions} setTransactions={setTransactions} currency={currency}/>
 
                 </section>

@@ -64,8 +64,8 @@ export function PieChart({ currency }) {
 
     return (
 
-        <div className="w-full h-100  p-4 bg-white rounded-xl shadow-md ">
-            <h2 className="text-lg font-semibold mb-2">Expense Breakdown</h2>
+        <div className="w-full h-100  p-4 bg-white dark:bg-gray-900 rounded-xl shadow-md ">
+            <h2 className="text-lg font-semibold mb-2 dark:text-white">Expense Breakdown</h2>
             <div className="flex items-center justify-center h-[300px]">
                 <div className="w-[280px]  h-[280px]">
                     <Pie data={pieData} options={options} />
