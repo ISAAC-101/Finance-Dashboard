@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout";
 
-export function Settings({ darkMode, setDarkMode, currency, setCurrency}) {
+export function Settings({ darkMode, setDarkMode, currency, setCurrency }) {
     return (
         <Layout>
             <div className="p-6 space-y-6">
@@ -23,10 +23,12 @@ export function Settings({ darkMode, setDarkMode, currency, setCurrency}) {
                         value={currency}
                         onChange={(e) => setCurrency(e.target.value)}
                         className="p-2 rounded-md "
-                    >
-                        <option value="GHS">₵ GHS</option>
-                        <option value="USD">$ USD</option>
-                        <option value="EUR">€ EUR</option>
+                    ><div className="dark:text-black">
+                            <option value="GHS">₵ GHS</option>
+                            <option value="USD">$ USD</option>
+                            <option value="EUR">€ EUR</option>
+                        </div>
+
                     </select>
                 </div>
                 <div>

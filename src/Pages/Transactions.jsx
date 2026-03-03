@@ -3,7 +3,7 @@ import { Layout } from "../components/Layout";
 import { useState } from "react";
 
 
-export function Transactions({ transactions, setTransactions , currency}) {
+export function Transactions({ transactions, setTransactions, currency }) {
 
 
 
@@ -60,7 +60,7 @@ export function Transactions({ transactions, setTransactions , currency}) {
 
                 {/* ADD TRANSACTION FORM */}
                 {showForm && (
-                    <div className="bg-white rounded-xl shadow-md p-4 mb-6">
+                    <div className="bg-white rounded-xl shadow-md p-4 mb-6 dark:bg-gray-900 dark:text-white">
                         <h2 className="text-lg font-semibold mb-4">Add Transaction</h2>
 
                         <form
@@ -110,8 +110,11 @@ export function Transactions({ transactions, setTransactions , currency}) {
                                 onChange={handleChange}
                                 className="border p-2 rounded"
                             >
-                                <option value="expense">Expense</option>
-                                <option value="income">Income</option>
+                                <div className=" dark:text-black">
+                                    <option value="expense">Expense</option>
+                                    <option value="income">Income</option>
+                                </div>
+
                             </select>
 
                             <div className="flex gap-2">
@@ -125,7 +128,7 @@ export function Transactions({ transactions, setTransactions , currency}) {
                                 <button
                                     type="button"
                                     onClick={() => setShowForm(false)}
-                                    className="bg-gray-300 px-4 py-2 rounded"
+                                    className="bg-gray-300 px-4 py-2 rounded dark:text-black"
                                 >
                                     Cancel
                                 </button>
@@ -135,7 +138,7 @@ export function Transactions({ transactions, setTransactions , currency}) {
                 )}
 
                 {/* TRANSACTIONS TABLE */}
-                <TransactionsTable transactions={transactions} setTransactions={setTransactions} showDelete={true} currency={currency}/>
+                <TransactionsTable transactions={transactions} setTransactions={setTransactions} showDelete={true} currency={currency} />
             </div>
         </Layout>
     );
