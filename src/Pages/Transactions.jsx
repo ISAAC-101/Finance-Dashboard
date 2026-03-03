@@ -110,10 +110,10 @@ export function Transactions({ transactions, setTransactions, currency }) {
                                 onChange={handleChange}
                                 className="border p-2 rounded"
                             >
-                                <div className=" dark:text-black">
+                                <section className=" dark:text-black">
                                     <option value="expense">Expense</option>
                                     <option value="income">Income</option>
-                                </div>
+                                </section>
 
                             </select>
 
